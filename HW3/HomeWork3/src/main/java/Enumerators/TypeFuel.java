@@ -2,5 +2,6 @@ package Enumerators;
 
 public enum TypeFuel {
     GAS,
-    DIS
+    DIS,
+    PETROL
 }
