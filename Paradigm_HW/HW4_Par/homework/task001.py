@@ -1,6 +1,6 @@
 # Решим задачу для двух вариантов:
-# - формула из методички с ДЗ
-# - реальная формула мат. статистики
+# - формула из презентации с ДЗ
+# - реальная формула мат.статистики
 
 def average(arr) -> float:
     """
@@ -98,5 +98,5 @@ array2 = [5, 3, 1]
 correlation_sem = round(pearson_correlation_sem(array1, array2), 3)
 correlation = round(pearson_correlation(array1, array2), 3)
 
-print(f"Коэффициент по формуле из методички семинара: {correlation_sem}")
+print(f"Коэффициент по формуле из презентации семинара: {correlation_sem}")
 print(f"Коэффициент корреляции Пирсона по стандартной формуле: {correlation}")
