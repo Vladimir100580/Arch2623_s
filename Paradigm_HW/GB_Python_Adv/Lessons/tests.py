@@ -33,8 +33,24 @@
 
 # for plase in range(1, 34):
 #     print(plase, min(plase - 1, max(3, min(4 + int((plase/13 + 2) / 3), plase - 4))))
-s = 7000
-pr = max(min(s * 0.015, 600), 30)
-print(pr)
+# s = 7000
+# pr = max(min(s * 0.015, 600), 30)
+# print(pr)
+#
+# print(round(4.5655, 3))
+# import random
+#
+# print(random.randrange(10, 40, 2))
 
-print(round(4.5655, 3))
+# number = "-45,0"
+# print(number.rstrip('0').rstrip(',') if ',' in number else number)
+#
+# li = [2, 3]
+# print('werbfwe')
+#
+# *pic, _ = "445.456.rtr".split('.')
+# print('.'.join(pic))
+
+i = 576
+
+print(f'{i:0^20}')

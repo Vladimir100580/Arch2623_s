@@ -3,10 +3,10 @@
 
 def fibonacci():
     numbers = (0, 1)
-    for i in range(1, 12):
+    while True:    # !!!!!!!!!!!!!!!
         yield numbers[0]             # сразу возвращает в итератор, запоминая в памяти переменные, и продолжает код
         numbers = (numbers[1], numbers[0] + numbers[1])
 
 f = fibonacci()
-for i in range(10):
+for i in range(20):
     print(next(f))

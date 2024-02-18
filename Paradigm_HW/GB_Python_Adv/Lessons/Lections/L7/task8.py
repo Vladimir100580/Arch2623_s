@@ -1,0 +1,10 @@
+with open('text_data.txt', 'r', encoding='utf-8') as f:
+    for line in f:                    # равносилен readline
+        print(line, end='')
+
+
+SIZE = 100
+with open('text_data.txt', 'r', encoding='utf-8') as f:
+    for line in f:
+        print(line[:-1])
+        # print(line.replace('\n', ''))          # второй способ удаления переноса строки
