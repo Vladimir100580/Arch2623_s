@@ -4,6 +4,7 @@
 # используйте магический метод проверки на равенство пользователей. Если такого пользователя нет,
 # вызывайте исключение доступа. А если пользователь есть, получите его уровень из множества пользователей.
 # добавление пользователя. Если уровень пользователя меньше, чем ваш уровень, вызывайте исключение уровня доступа.
+
 from Lessons.Seminars.Lesson13.task3 import LevelError, AccessError, ProjectException
 from Lessons.Seminars.Lesson13.task4 import load_users, User
 
@@ -14,9 +15,9 @@ class Project:
         self.admin = None
 
     def auth(self, id_, name):
-        user_temp = User(id_, None, name)
+        user_temp = User(id_, '', name)
         if user_temp not in self.data:
-            raise AccessError
+            raise AccessError(user_temp)
         for user in self.data:
             if user == user_temp:
                 self.admin = user
@@ -25,11 +26,13 @@ class Project:
         if not self.admin:
             raise ProjectException
         if int(level) < int(self.admin.level):
-            raise LevelError
+            raise LevelError(level, self.admin.level)
         self.data.add(User(id_, level, name))
 
 
 project1 = Project('task04.json')
-project1.auth("12345657", "Alex")
-project1.add_user("923456", "9", "Dima")
+project1.auth("12345656", "Alex")
+# project1.auth("12345657", "Alex")         # raise AccessError
+project1.add_user("923456", "3", "Dima")  # raise LevelError
+# project1.add_user("923456", "9", "Dima")
 print(project1.data)
