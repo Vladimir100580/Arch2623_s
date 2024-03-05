@@ -4,7 +4,7 @@
 # Напишите 3-7 тестов unittest для данного класса.
 
 import unittest
-from Seminar14.rect import Rectangle
+from Lessons.Seminars.Lesson14.rect import Rectangle
 
 
 class TestRectangle(unittest.TestCase):

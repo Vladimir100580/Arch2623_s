@@ -6,7 +6,7 @@
 
 import pytest
 
-from Seminar14.rect import Rectangle
+from Lessons.Seminars.Lesson14.rect import Rectangle
 
 
 @pytest.fixture

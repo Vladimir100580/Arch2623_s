@@ -30,9 +30,9 @@ class Student:
         if name == 'name':
             if not value.replace(' ', '').isalpha() or not value.istitle():
                 raise ValueError("ФИО должно состоять только из букв и начинаться с заглавной буквы")
-        self.__dict__[name] = value
-        # super().__setattr__(name, value)  # обращаемся к базовому классу
-        print(super().__dict__)
+        # self.__dict__[name] = value
+        super().__setattr__(name, value)  # обращаемся к базовому классу
+        # print(super().__dict__)
 
     def __getattr__(self, name):
         if name in self.subjects:
@@ -82,3 +82,21 @@ class Student:
         if len(total_grades) == 0:
             return 0
         return sum(total_grades) / len(total_grades)
+
+
+if __name__ == '__main__':
+    student = Student("Иван Иванов", "subjects.csv")
+
+    student.add_grade("Математика", 4)
+    student.add_test_score("Математика", 85)
+
+    student.add_grade("История", 5)
+    student.add_test_score("История", 92)
+
+    average_grade = student.get_average_grade()
+    print(f"Средний балл: {average_grade}")
+
+    average_test_score = student.get_average_test_score("Математика")
+    print(f"Средний результат по тестам по математике: {average_test_score}")
+
+    print(student)
